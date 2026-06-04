@@ -1,0 +1,29 @@
+# ICA Preprocessing Config — copy this file and fill in paths for each subject.
+# Rename to {subject_id}_ICA.yml (e.g. sub-UTS01_ICA.yml)
+
+# TODO: set path to subject output directory
+output_dir: /path/to/output/{subject_id}
+
+# TODO: set path to subject gray-matter probability segmentation from fMRIPrep
+mask_path: /path/to/fmriprep/{subject_id}/ses-1/anat/{subject_id}_ses-1_space-MNI152NLin2009cAsym_res-2_label-GM_probseg.nii.gz
+
+sample:
+  main:
+    functional_paths:
+      # TODO: add preprocessed MNI-space BOLD files for the 3 stories used for ICA estimation
+      - /path/to/PreprocessedMNI/{subject_id}/{subject_id}_ses-2_task-alternateithicatom_space-MNI152NLin2009cAsym_res-2_desc-preproc_desc-cleaned_bold.nii.gz
+      - /path/to/PreprocessedMNI/{subject_id}/{subject_id}_ses-3_task-howtodraw_space-MNI152NLin2009cAsym_res-2_desc-preproc_desc-cleaned_bold.nii.gz
+      - /path/to/PreprocessedMNI/{subject_id}/{subject_id}_ses-4_task-exorcism_space-MNI152NLin2009cAsym_res-2_desc-preproc_desc-cleaned_bold.nii.gz
+    n_components_pca: false
+
+label:
+  main:
+    reference_atlases:
+      AUD: parcellate/resources/DU15_AUD.nii.gz
+      LANG: parcellate/resources/DU15_LANG.nii.gz
+      FPN_A: parcellate/resources/DU15_FPN_A.nii.gz
+      FPN_B: parcellate/resources/DU15_FPN_B.nii.gz
+      LANA: parcellate/resources/Prob_LanA_n806_top10.nii.gz
+      SEM: parcellate/resources/Parcels_MNI_semantic_network.nii
+      VIS_C: parcellate/resources/DU15_VIS_C.nii.gz
+      VIS_P: parcellate/resources/DU15_VIS_P.nii.gz

@@ -1,0 +1,8 @@
+nibabel
+nilearn
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+litcoder   # encoding model training — https://github.com/GT-LIT-Lab/litcoder_core.git
